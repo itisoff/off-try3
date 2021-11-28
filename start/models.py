@@ -24,9 +24,10 @@ class Detail(models.Model):
     quantity = models.IntegerField(default = 1, blank = True)
     length = models.IntegerField(default=0, blank = True)
     width = models.IntegerField(default=0, blank = True)
-    height = models.IntegerField(default=0, blank = True)
+    depth = models.IntegerField(default=0, blank = True)
     budget = models.CharField(max_length=200, blank = False, choices = BUDGET)
-    price = models.DecimalField(decimal_places=2, max_digits=10, blank = True)
+    price1 = models.DecimalField(decimal_places=2, max_digits=10, blank = True)
+    price2 = models.DecimalField(decimal_places=2, max_digits=10, blank = True, default=0)
 
     def __str__(self):
         return (self.type + " + " + self.purpose + " + " + self.budget)
